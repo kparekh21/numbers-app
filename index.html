@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers app</title>
+</head>
+<body>
+    <h1>Arithmetic</h1>
+    <input type="number" id="one" name="one">
+    <label for="two"> + </label>
+    <input type="number" id="two" name="two">
+    <button onclick="add()">=</button>
+    <label id="sum"></p>
+    
+        <script>
+            function add() {
+                let num1 = document.getElementById("one");
+                let num2 = document.getElementById("two");
+                let sum = Number(num1.value) + Number(num2.value);
+                document.getElementById("sum").innerHTML = sum;
+                }
+        </script>
+    </body>
+</html>
