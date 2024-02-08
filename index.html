@@ -11,15 +11,16 @@
     <label for="two"> + </label>
     <input type="number" id="two" name="two">
     <button onclick="add()">=</button>
-    <label id="sum"></p>
+    <input id="res" readonly></p>
     
         <script>
-            function add() {
-                let num1 = document.getElementById("one");
-                let num2 = document.getElementById("two");
-                let sum = Number(num1.value) + Number(num2.value);
-                document.getElementById("sum").innerHTML = sum;
-                }
+            async function add() {
+                const number1 = document.getElementById("one").value;
+                const number2 = document.getElementById("two").value;
+                const response = await fetch("https://arithmetic-service-kparekh21.onrender.com/add/" + number1 + "/" + number2);
+                const sum = await response.json()
+                document.getElementById("res").value = sum;
+            }
         </script>
     </body>
 </html>
